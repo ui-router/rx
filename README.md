@@ -45,8 +45,10 @@ class FooComponent {
   component: FooComponent,
   resolve: [ { 
     token: 'foo$', 
-    resolveFn: (trans, http) => http.get('/foos/' + trans.params().fooId)
-    deps: [ Transition, Http ]
+    deps: [ UIRouterGlobals, Http ],
+    resolveFn: (globals, http) => globals.params$.map(params => params.fooId)
+      .distinctUntilChanged()
+      .map(fooId => http.get('/foos/' + fooId))
   } ]
 })
 ```
