@@ -1,0 +1,24 @@
+{
+  "name": "ui-router-rx",
+  "version": "0.1.0",
+  "description": "Reactive extensions for UI-Router",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ui-router/rx.git"
+  },
+  "keywords": [
+    "ui-router",
+    "reactive",
+    "rxjs"
+  ],
+  "author": "Chris Thielen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ui-router/rx/issues"
+  },
+  "homepage": "https://github.com/ui-router/rx#readme"
+}

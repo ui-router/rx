@@ -1,8 +1,10 @@
 import {Observable, ReplaySubject} from "rxjs/Rx";
 import {Transition, UIRouter, UIRouterGlobals} from "ui-router-ng2";
 
-declare module 'ui-router-ng2/globals' {
+declare module 'ui-router-core/globals' {
   interface UIRouterGlobals {
+    start$: Observable<Transition>;
+    success$: Observable<Transition>;
     params$: Observable<{ [paramName: string]: any }>;
   }
 }
