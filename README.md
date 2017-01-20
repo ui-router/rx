@@ -3,14 +3,16 @@ Reactive Extensions (RxJS) for UI-Router
 
 ### What
 
-1) This extension exposes UI-Router [Transitions](https://ui-router.github.io/docs/latest/classes/transition.transition-1.html)
+This UI-Router plugin exposes various events in UI-Router 
    as [RxJS](https://github.com/ReactiveX/rxjs) Observables.
-   This helps you to use UI-Router in a reactive mode.
 
-2) The extension adds a `dynamic()` mode, which makes all parameter types
-   [dynamic](https://ui-router.github.io/docs/latest/interfaces/params.paramdeclaration.html#dynamic) by default.
-   This means that changes to the parameter values do not cause the state or views to be reloaded.
-   You can subscribe to the parameter changes and update your components reactively.
+   - Transitions (successfull, or any)
+   - Parameter values
+   - State registration/deregistrations
+
+This helps you to use UI-Router in a reactive mode.
+
+This plugin works with UI-Router Core 2.0 and above (angular-ui-router 1.0.0-rc.1+, ui-router-ng2 1.0.0-beta.4+, ui-router-react 0.4.0+).
 
 
 ### Getting
@@ -21,34 +23,47 @@ npm install ui-router-rx
 
 ### Enabling
 
+This is a UI-Router Plugin.
+Add the `UIRouterRx` plugin to your app's `UIRouter` instance.
+
 ```js
-// The constructor augments UIRouterGlobals with 
-let rx = new UIRouterRx(router);
-// Optionally, enable dynamic mode
-rx.dynamicMode();
+import { UIRouterRx } from "ui-router-rx";
+
+// ... after UI-Router bootstrap, get a reference to the `UIRouter` instance
+// ... call `.plugin()` to register the ui-router-rx plugin
+uiRouter.plugin(UIRouterRx);
 ```
 
-### Using (ng2)
+### Using
+
+In a state definition,
 
 ```js
-@Component({
-  template: `<h2>{{ foo$ | async }}</h2>`
-})
-class FooComponent {
-  @Input() foo$: Observable;
-}
-```
+const foo$ = (uiRouter) => 
+    uiRouter.globals.params$.map(params => params.fooId)
+      .distinctUntilChanged()
+      .map(fooId => fetch('/foo/' + fooId).then(resp => resp.json()))
 
-```js
-.state('foo', {
+var fooState = {
+  name: 'foo',
   url: '/foo/{fooId}',
   component: FooComponent,
-  resolve: [ { 
-    token: 'foo$', 
-    deps: [ UIRouterGlobals, Http ],
-    resolveFn: (globals, http) => globals.params$.map(params => params.fooId)
-      .distinctUntilChanged()
-      .map(fooId => http.get('/foos/' + fooId))
-  } ]
+  resolve: [ 
+      { token: 'foo$', deps: [ UIRouter ], resolveFn: foo$ } 
+  ]
 })
 ```
+
+In the component, access the `foo$` resolve value (it will be an Observable).  Subscribe to it and do something with it when it emits a new value. 
+
+```js
+var subscription = foo$.subscribe(foo => this.foo = foo);
+```
+
+Don't forget to unsubscribe when the component is destroyed.
+
+```js
+subscription.unsubscribe();
+```
+
+
