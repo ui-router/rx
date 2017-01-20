@@ -1,6 +1,6 @@
 {
   "name": "ui-router-rx",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Reactive extensions for UI-Router",
   "scripts": {
     "build": "tsc && tsc -outDir lib-esm -m es6",
@@ -29,7 +29,11 @@
     "ui-router-core": "^3.1.1"
   },
   "devDependencies": {
+    "conventional-changelog": "^1.1.0",
+    "conventional-changelog-cli": "^1.2.0",
+    "readline-sync": "^1.4.5",
     "rxjs": "^5.0.3",
+    "shx": "^0.2.2",
     "ui-router-core": "3.1.1"
   }
 }
