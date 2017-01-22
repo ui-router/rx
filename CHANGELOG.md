@@ -1,3 +1,10 @@
+<a name="0.2.1"></a>
+## 0.2.1 (2017-01-22)
+
+* fix(*): fix peer dependency for ui-router-core (from `^3.1.1` to `>=3.1.1`) ([4a29191](https://github.com/ui-router/rx/commit/4a29191))
+
+
+
 <a name="0.2.0"></a>
 # 0.2.0 (2017-01-20)
 
