@@ -4,7 +4,7 @@
   "description": "Reactive extensions for UI-Router",
   "scripts": {
     "clean": "shx rm -rf lib lib-esm",
-    "build": "tsc && tsc -outDir lib-esm -m es6",
+    "build": "npm run clean && tsc && tsc -outDir lib-esm -m es6",
     "install": "node ./migrate/migratewarn.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
