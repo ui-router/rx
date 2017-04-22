@@ -26,7 +26,7 @@
   "homepage": "https://github.com/ui-router/rx#readme",
   "peerDependencies": {
     "rxjs": "^5.0.3",
-    "ui-router-core": ">=3.1.1"
+    "@uirouter/core": "5.0.0"
   },
   "devDependencies": {
     "conventional-changelog": "^1.1.0",
@@ -34,6 +34,7 @@
     "readline-sync": "^1.4.5",
     "rxjs": "^5.0.3",
     "shx": "^0.2.2",
-    "ui-router-core": "3.1.1"
+    "@uirouter/core": "5.0.0",
+    "typescript": "^2.1.4"
   }
 }

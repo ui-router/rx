@@ -4,7 +4,7 @@ import "rxjs/add/operator/mergeMap";
 import "rxjs/add/operator/map";
 import { Observable } from "rxjs/Observable";
 import { ReplaySubject } from "rxjs/ReplaySubject";
-import { Transition, UIRouter, StateDeclaration, UIRouterPlugin } from "ui-router-core";
+import { Transition, UIRouter, StateDeclaration, UIRouterPlugin } from "@uirouter/core";
 
 export interface StatesChangedEvent {
   currentStates: StateDeclaration[];
@@ -12,7 +12,7 @@ export interface StatesChangedEvent {
   deregistered: StateDeclaration[];
 }
 
-declare module 'ui-router-core/lib/globals' {
+declare module '@uirouter/core/lib/globals' {
   interface UIRouterGlobals {
     states$?: Observable<StatesChangedEvent>;
     start$?: Observable<Transition>;
