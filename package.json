@@ -1,9 +1,10 @@
 {
   "name": "ui-router-rx",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Reactive extensions for UI-Router",
   "scripts": {
     "build": "tsc && tsc -outDir lib-esm -m es6",
+    "install": "node ./migrate/migratewarn.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
