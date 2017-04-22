@@ -1,8 +1,9 @@
 {
   "name": "@uirouter/rx",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Reactive extensions for UI-Router",
   "scripts": {
+    "clean": "shx rm -rf lib lib-esm",
     "build": "tsc && tsc -outDir lib-esm -m es6",
     "install": "node ./migrate/migratewarn.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -26,16 +27,16 @@
   },
   "homepage": "https://github.com/ui-router/rx#readme",
   "peerDependencies": {
-    "rxjs": "^5.0.3",
-    "@uirouter/core": "5.0.0"
+    "@uirouter/core": "5.0.0",
+    "rxjs": "^5.0.3"
   },
   "devDependencies": {
+    "@uirouter/core": "5.0.0",
     "conventional-changelog": "^1.1.0",
     "conventional-changelog-cli": "^1.2.0",
     "readline-sync": "^1.4.5",
     "rxjs": "^5.0.3",
     "shx": "^0.2.2",
-    "@uirouter/core": "5.0.0",
     "typescript": "^2.1.4"
   }
 }
