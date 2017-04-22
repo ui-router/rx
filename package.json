@@ -1,5 +1,5 @@
 {
-  "name": "ui-router-rx",
+  "name": "@uirouter/rx",
   "version": "0.3.0",
   "description": "Reactive extensions for UI-Router",
   "scripts": {
