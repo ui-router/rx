@@ -1,3 +1,9 @@
+<a name="0.3.0"></a>
+## 0.2.1 (2017-04-22)
+
+* chore(*): Rename npm package from `ui-router-rx` to `@uirouter/rx`
+* chore(*): Switch dependency from `ui-router-core` to `@uirouter/core`
+
 <a name="0.2.1"></a>
 ## 0.2.1 (2017-01-22)
 
