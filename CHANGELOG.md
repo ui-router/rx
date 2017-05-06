@@ -1,3 +1,12 @@
+<a name="0.3.2"></a>
+## 0.3.2 (2017-05-06)
+
+* chore(*): added .editorconfig file ([8101b6b](https://github.com/ui-router/rx/commit/8101b6b))
+* chore(build): widen dependency on @uirouter/core ([ef3ac74](https://github.com/ui-router/rx/commit/ef3ac74))
+* chore(gitignore): re-ignore hidden files ([e30ae6e](https://github.com/ui-router/rx/commit/e30ae6e))
+
+
+
 <a name="0.3.1"></a>
 ## 0.3.1 (2017-04-22)
 
