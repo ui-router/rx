@@ -1,6 +1,6 @@
 {
   "name": "@uirouter/rx",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Reactive extensions for UI-Router",
   "scripts": {
     "clean": "shx rm -rf lib lib-esm",
@@ -27,11 +27,11 @@
   },
   "homepage": "https://github.com/ui-router/rx#readme",
   "peerDependencies": {
-    "@uirouter/core": "5.0.0",
+    "@uirouter/core": ">=5.0.0",
     "rxjs": "^5.0.3"
   },
   "devDependencies": {
-    "@uirouter/core": "5.0.0",
+    "@uirouter/core": ">=5.0.0",
     "conventional-changelog": "^1.1.0",
     "conventional-changelog-cli": "^1.2.0",
     "readline-sync": "^1.4.5",
