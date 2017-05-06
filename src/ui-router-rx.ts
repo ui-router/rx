@@ -23,7 +23,7 @@ declare module '@uirouter/core/lib/globals' {
 
 /** Augments UIRouterGlobals with observables for transition starts, successful transitions, and state parameters */
 export class UIRouterRx implements UIRouterPlugin {
-  name = 'ui-router-rx';
+  name = '@uirouter/rx';
   private deregisterFns: Function[] = [];
 
   constructor(router: UIRouter) {
@@ -55,3 +55,5 @@ export class UIRouterRx implements UIRouterPlugin {
     this.deregisterFns = [];
   }
 }
+
+export const UIRouterRxPlugin = UIRouterRx;
