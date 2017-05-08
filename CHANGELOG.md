@@ -1,3 +1,15 @@
+<a name="0.4.0"></a>
+# 0.4.0 (2017-05-08)
+
+* feat(build): Publish UMD bundles ([fd97a1d](https://github.com/ui-router/rx/commit/fd97a1d))
+* feat(plugin): Re-export UIRouterRx as UIRouterRxPlugin ([51a31e2](https://github.com/ui-router/rx/commit/51a31e2))
+
+
+### BREAKING CHANGE
+
+* rename plugin.name from `ui-router-rx` to `@uirouter/rx`
+
+
 <a name="0.3.2"></a>
 ## 0.3.2 (2017-05-06)
 

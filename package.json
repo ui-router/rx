@@ -1,6 +1,6 @@
 {
   "name": "@uirouter/rx",
-  "version": "0.3.3",
+  "version": "0.4.0",
   "description": "Reactive extensions for UI-Router",
   "scripts": {
     "clean": "shx rm -rf lib lib-esm _bundles",
