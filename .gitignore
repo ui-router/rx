@@ -4,6 +4,7 @@ node_modules
 *~
 **/.*
 .*
+stats.html
 
 # webstorm files
 .idea
