@@ -1,3 +1,7 @@
+## 0.4.2 (2017-10-12)
+[Compare `@uirouter/rx` versions 0.4.1 and 0.4.2](https://github.com/ui-router/rx/compare/0.4.1...0.4.2)
+
+
 <a name="0.4.0"></a>
 # 0.4.0 (2017-05-08)
 
