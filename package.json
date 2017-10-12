@@ -7,6 +7,8 @@
     "build": "npm run clean && tsc && tsc -outDir lib-esm -m es6",
     "package": "npm run build && rollup -c && rollup -c --environment MINIFY",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "changelog": "update_changelog",
+    "release": "release",
     "prepublishOnly": "npm run package"
   },
   "repository": {
@@ -33,6 +35,7 @@
   },
   "devDependencies": {
     "@uirouter/core": ">=5.0.0",
+    "@uirouter/publish-scripts": "^1.0.9",
     "conventional-changelog": "^1.1.0",
     "conventional-changelog-cli": "^1.2.0",
     "readline-sync": "^1.4.5",
