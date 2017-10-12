@@ -8,7 +8,7 @@
     "package": "npm run build && rollup -c && rollup -c --environment MINIFY",
     "install": "node ./migrate/migratewarn.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "npm run package"
+    "prepublishOnly": "npm run package"
   },
   "repository": {
     "type": "git",
