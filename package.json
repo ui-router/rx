@@ -5,8 +5,9 @@
   "scripts": {
     "clean": "shx rm -rf lib lib-esm _bundles",
     "build": "npm run clean && tsc && tsc -outDir lib-esm -m es6",
-    "package": "npm run build && rollup -c && rollup -c --environment MINIFY",
+    "package": "npm run build && rollup -c && rollup -c --environment MINIFY && npm run fixmaps",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "fixmaps": "modify_sourcemap_paths",
     "changelog": "update_changelog",
     "release": "release",
     "prepublishOnly": "npm run package"
