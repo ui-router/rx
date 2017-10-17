@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@uirouter/core": ">=5.0.0",
-    "@uirouter/publish-scripts": "2.0.2",
+    "@uirouter/publish-scripts": "2.0.3",
     "conventional-changelog": "^1.1.0",
     "conventional-changelog-cli": "^1.2.0",
     "readline-sync": "^1.4.5",
