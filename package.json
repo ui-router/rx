@@ -6,7 +6,7 @@
     "clean": "shx rm -rf lib lib-esm _bundles",
     "compile": "npm run clean && tsc && tsc -outDir lib-esm -m es6",
     "bundle": "rollup -c && rollup -c --environment MINIFY",
-    "build": "npm run compile && npm run bundle && npm run fixmaps:lib && npm run fixmaps:bundle",
+    "build": "run-s compile bundle fixmaps:*",
     "test": "echo \"Error: no test specified\" && exit 1",
     "fixmaps:lib": "tweak_sourcemap_paths -a --include 'lib/**/*.js.map' 'lib-esm/**/*.js.map'",
     "fixmaps:bundle": "tweak_sourcemap_paths -p ../src --include '_bundles/**/*.js.map'",
