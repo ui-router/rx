@@ -5,10 +5,10 @@
   "scripts": {
     "clean": "shx rm -rf lib lib-esm _bundles",
     "build": "npm run clean && tsc && tsc -outDir lib-esm -m es6",
-    "package": "npm run build && rollup -c && rollup -c --environment MINIFY && npm run fixmaps",
+    "package": "npm run build && rollup -c && rollup -c --environment MINIFY && npm run fixmaps:lib && npm run fixmaps:bundle",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "fixmaps": "modify_sourcemap_paths",
-    "changelog": "update_changelog",
+    "fixmaps:lib": "tweak_sourcemap_paths -a --include 'lib/**/*.js.map' 'lib-esm/**/*.js.map'",
+    "fixmaps:bundle": "tweak_sourcemap_paths -a --include '_bundles/**/*.js.map'",
     "release": "release",
     "prepublishOnly": "npm run package"
   },
@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "@uirouter/core": ">=5.0.0",
-    "@uirouter/publish-scripts": "^1.0.9",
+    "@uirouter/publish-scripts": "2.0.2",
     "conventional-changelog": "^1.1.0",
     "conventional-changelog-cli": "^1.2.0",
     "readline-sync": "^1.4.5",
