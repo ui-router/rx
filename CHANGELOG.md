@@ -1,3 +1,8 @@
+## 0.4.5 (2017-10-17)
+[Compare `@uirouter/rx` versions 0.4.4 and 0.4.5](https://github.com/ui-router/rx/compare/0.4.4...0.4.5)
+
+
+
 ## 0.4.4 (2017-10-12)
 [Compare `@uirouter/rx` versions 0.4.2 and 0.4.4](https://github.com/ui-router/rx/compare/0.4.2...0.4.4)
 
