@@ -4,13 +4,14 @@
   "description": "Reactive extensions for UI-Router",
   "scripts": {
     "clean": "shx rm -rf lib lib-esm _bundles",
-    "build": "npm run clean && tsc && tsc -outDir lib-esm -m es6",
-    "package": "npm run build && rollup -c && rollup -c --environment MINIFY && npm run fixmaps:lib && npm run fixmaps:bundle",
+    "compile": "npm run clean && tsc && tsc -outDir lib-esm -m es6",
+    "bundle": "rollup -c && rollup -c --environment MINIFY",
+    "build": "npm run compile && npm run bundle && npm run fixmaps:lib && npm run fixmaps:bundle",
     "test": "echo \"Error: no test specified\" && exit 1",
     "fixmaps:lib": "tweak_sourcemap_paths -a --include 'lib/**/*.js.map' 'lib-esm/**/*.js.map'",
     "fixmaps:bundle": "tweak_sourcemap_paths -a --include '_bundles/**/*.js.map'",
     "release": "release",
-    "prepublishOnly": "npm run package"
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
