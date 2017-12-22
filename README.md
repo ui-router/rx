@@ -1,4 +1,6 @@
 # ui-router-rx
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/ui-router/rx.svg)](https://greenkeeper.io/)
 Reactive Extensions (RxJS) for UI-Router
 
 ### What
