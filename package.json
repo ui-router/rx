@@ -11,7 +11,8 @@
     "fixmaps:lib": "tweak_sourcemap_paths -a --include 'lib/**/*.js.map' 'lib-esm/**/*.js.map'",
     "fixmaps:bundle": "tweak_sourcemap_paths -p ../src --include '_bundles/**/*.js.map'",
     "release": "release",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "precommit": "pretty-quick --staged"
   },
   "repository": {
     "type": "git",
@@ -40,6 +41,9 @@
     "@uirouter/publish-scripts": "2.2.10",
     "conventional-changelog": "^1.1.0",
     "conventional-changelog-cli": "^1.2.0",
+    "husky": "^0.14.3",
+    "prettier": "^1.11.1",
+    "pretty-quick": "^1.4.1",
     "readline-sync": "^1.4.5",
     "rxjs": "^5.0.3",
     "shx": "^0.2.2",
