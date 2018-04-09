@@ -1,1 +1,1 @@
-export * from "./ui-router-rx";
+export * from './ui-router-rx';
