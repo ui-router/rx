@@ -1,19 +1,18 @@
 {
   "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "moduleResolution": "node",
+    "inlineSources": true,
+    "lib": ["es6", "dom"],
     "module": "commonjs",
-    "target": "es5",
-    "lib": [ "es6", "dom" ],
-    "allowSyntheticDefaultImports": true,
-    "rootDir": "src",
+    "moduleResolution": "node",
     "outDir": "lib",
-    "declaration": true,
+    "rootDir": "src",
+    "skipLibCheck": true,
     "sourceMap": true,
-    "inlineSources": true
+    "target": "es5"
   },
-  "files": [
-    "src/index.ts"
-  ]
+  "files": ["src/index.ts"]
 }

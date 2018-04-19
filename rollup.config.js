@@ -1,8 +1,6 @@
 import nodeResolve from 'rollup-plugin-node-resolve';
 import uglify from 'rollup-plugin-uglify';
-import progress from 'rollup-plugin-progress';
 import sourcemaps from 'rollup-plugin-sourcemaps';
-import visualizer from 'rollup-plugin-visualizer';
 import commonjs from 'rollup-plugin-commonjs';
 
 let MINIFY = process.env.MINIFY;
@@ -19,7 +17,7 @@ let uglifyOpts = { output: {} };
 // retain multiline comment with @license
 uglifyOpts.output.comments = (node, comment) => comment.type === 'comment2' && /@license/i.test(comment.value);
 
-let plugins = [nodeResolve({ jsnext: true }), progress(), sourcemaps(), commonjs(), visualizer({ sourcemap: true })];
+let plugins = [nodeResolve({ jsnext: true }), sourcemaps(), commonjs()];
 
 if (MINIFY) plugins.push(uglify(uglifyOpts));
 
