@@ -1,0 +1,18 @@
+language: node_js
+node_js: 8.9.1
+before_install: sh -e /etc/init.d/xvfb start
+script: if [ "x${DOWNSTREAM_PKGS}x" != "xx" ] ; then npm run test:downstream ; else
+  npm test ; fi
+notifications:
+  slack:
+    on_success: never
+    rooms:
+      secure: LXtIIjzJl4BlRbHBh76NECrRM7vJ6fn4RwHXty4/wnizRicCnqhd4HnlFp+qYeocCaBV5W8oTqAo9Gzrz1OF5wkhTMfPD7YXMTndZmYza/tIPsooaem0efw1wHhGbbbHVHg2/LVl2UauIs2L2cwXnpW9m/tM0XTnnJQ5zGh3FomuT6GPwrOGmHyb5uJgxKnc3UHr/lmrXKJnpSPty2XGvmelyHL+eobHrrKeghAwGqAEh2wiPV7Pcytr42r1X7f7Xnnmm45aBzJrJdHkXdDfiDuTUH91ZsnR94Afmq23zZ+xRQQQBv/k0ipeXw+TmbYZfnwUD9pnydxspZWlvcqI1Wzqm8LKvojre+pt7A8bPKgPej3xnBSNcFBMc//XFMTsPec+3BUtkSkDVYsajI7gcLeNkkNGR4y5IO0Ax9jcpM6a7yB251ijOAnvsSPzHg/UDi2l7NBG02mgFrfJLqOug8P6iN28tH4APMYprzjQ/vgd4jt3o9Kq4mMFLuM/+5vVYDdOusXoUrgvZFOlHx6H+E6RrgtYtrGNk+22TE8Ni7CXdTVOxPuIgkPc0DZgDMOZp/oBpni/pk0D2wPQzR3sJGyGKMt4feYQv1yjx9W8Yt1PZnx3evEW+Tnip4Zwa0Hfi6YkaWYuC0Z604by8NeGfkONDB1UUt97vANnlNo3l7c=
+sudo: false
+git:
+  depth: 3
+cache:
+  yarn: true
+  directories:
+  - node_modules
+  - ".downstream_cache"
