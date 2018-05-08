@@ -1,3 +1,23 @@
+# 0.5.0 (2018-05-08)
+[Compare `@uirouter/rx` versions 0.4.5 and 0.5.0](https://github.com/ui-router/rx/compare/0.4.5...0.5.0)
+
+### Bug Fixes
+
+* **onError:** Handle transition error so rxjs doesn't log rejections ([84e6210](https://github.com/ui-router/rx/commit/84e6210))
+
+
+### Features
+
+* upgrade to rxjs 6 ([46b8158](https://github.com/ui-router/rx/commit/46b8158))
+
+
+### BREAKING CHANGES
+
+* rxjs 6.0.0 or higher is now required to use this module
+
+
+
+
 # 0.5.0-alpha.1 (2018-05-07)
 [Compare `@uirouter/rx` versions 0.4.5 and 0.5.0-alpha.1](https://github.com/ui-router/rx/compare/0.4.5...0.5.0-alpha.1)
 

@@ -1,6 +1,6 @@
 {
   "name": "@uirouter/rx",
-  "version": "0.5.0-alpha.1",
+  "version": "0.5.0",
   "description": "Reactive extensions for UI-Router",
   "scripts": {
     "clean": "shx rm -rf lib lib-esm _bundles yarn-error.log",
