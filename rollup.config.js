@@ -39,51 +39,25 @@ function isExternal(id) {
 }
 
 const CONFIG = {
-  moduleName: '@uirouter/rx',
-  entry: 'lib-esm/index.js',
-  dest: '_bundles/ui-router-rx' + extension,
+  input: 'lib-esm/index.js',
+  output: {
+    file: '_bundles/ui-router-rx' + extension,
+    name: '@uirouter/rx',
+    globals: {
+      '@uirouter/core': '@uirouter/core',
+      '@uirouter/rx': '@uirouter/rx',
+      '@angular/core': 'ng.core',
+      '@angular/common': 'ng.common',
+    },
+    sourcemap: true,
+    banner: banner,
+    format: 'umd',
+    exports: 'named',
+  },
 
-  sourceMap: true,
-  format: 'umd',
-  exports: 'named',
   plugins: plugins,
-  banner: banner,
-
   onwarn: onwarn,
   external: isExternal,
-
-  globals: {
-    'rxjs/ReplaySubject': 'Rx',
-
-    // Copied these from @angular/router rollup config
-    'rxjs/BehaviorSubject': 'Rx',
-    'rxjs/Observable': 'Rx',
-    'rxjs/Subject': 'Rx',
-    'rxjs/Subscription': 'Rx',
-    'rxjs/util/EmptyError': 'Rx',
-
-    'rxjs/observable/from': 'Rx.Observable',
-    'rxjs/observable/fromPromise': 'Rx.Observable',
-    'rxjs/observable/forkJoin': 'Rx.Observable',
-    'rxjs/observable/of': 'Rx.Observable',
-
-    'rxjs/operator/toPromise': 'Rx.Observable.prototype',
-    'rxjs/operator/map': 'Rx.Observable.prototype',
-    'rxjs/operator/mergeAll': 'Rx.Observable.prototype',
-    'rxjs/operator/concatAll': 'Rx.Observable.prototype',
-    'rxjs/operator/mergeMap': 'Rx.Observable.prototype',
-    'rxjs/operator/reduce': 'Rx.Observable.prototype',
-    'rxjs/operator/every': 'Rx.Observable.prototype',
-    'rxjs/operator/first': 'Rx.Observable.prototype',
-    'rxjs/operator/catch': 'Rx.Observable.prototype',
-    'rxjs/operator/last': 'Rx.Observable.prototype',
-    'rxjs/operator/filter': 'Rx.Observable.prototype',
-    'rxjs/operator/concatMap': 'Rx.Observable.prototype',
-    '@uirouter/core': '@uirouter/core',
-    '@uirouter/rx': '@uirouter/rx',
-    '@angular/core': 'ng.core',
-    '@angular/common': 'ng.common',
-  },
 };
 
 export default CONFIG;
