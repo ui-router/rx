@@ -1,7 +1,7 @@
 /** @module rx */
 /** */
 import { Observable, ReplaySubject } from 'rxjs';
-import { map, mergeMap } from 'rxjs/operators';
+import { map, mergeMap, filter } from 'rxjs/operators';
 import { Transition, UIRouter, StateDeclaration, UIRouterPlugin } from '@uirouter/core';
 
 export interface StatesChangedEvent {
@@ -26,7 +26,7 @@ export class UIRouterRx implements UIRouterPlugin {
 
   constructor(router: UIRouter) {
     let start$ = new ReplaySubject<Transition>(1);
-    let success$ = <Observable<Transition>>start$.pipe(mergeMap((t: Transition) => t.promise.then(() => t)));
+    let success$ = start$.pipe(mergeMap(t => t.promise.then(() => t, () => null)), filter(t => !!t));
     let params$ = success$.pipe(map((transition: Transition) => transition.params()));
 
     let states$ = new ReplaySubject<StatesChangedEvent>(1);

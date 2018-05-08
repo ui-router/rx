@@ -9,11 +9,14 @@ module.exports = function(karma) {
     autoWatchInterval: 0,
     logLevel: 'warn',
     reporters: ['super-dots', 'mocha'],
+    mochaReporter: {
+      output: 'minimal',
+    },
     colors: true,
     port: 8080,
     basePath: '.',
-    browsers: ['ChromeHeadlessNoSandbox'],
-    // browsers: ['Chrome'],
+    // browsers: ['ChromeHeadlessNoSandbox'],
+    browsers: ['Chrome'],
     customLaunchers: {
       ChromeHeadlessNoSandbox: { base: 'ChromeHeadless', flags: ['--no-sandbox'] },
     },

@@ -31,11 +31,11 @@ function onwarn(warning) {
 }
 
 function isExternal(id) {
-  // @uirouter/core and ui-router-rx should be external
-  // All rxjs and @angular/* should be external
-  // except for @angular/router/src/router_config_loader
-  let externals = [/^rxjs\/.*/, /^@uirouter\/.*/, /^@angular\/.*/, /^angular$/];
-  return externals.map(regex => regex.exec(id)).reduce((acc, val) => acc || !!val, false);
+  // @uirouter/core and rxjs should be external
+  let externals = [/^rxjs\/?/, /\/rxjs\//, /^@uirouter\/.*/];
+  let isExternal = externals.map(regex => regex.exec(id)).reduce((acc, val) => acc || !!val, false);
+  // console.log(id, isExternal);
+  return isExternal;
 }
 
 const CONFIG = {
@@ -46,8 +46,6 @@ const CONFIG = {
     globals: {
       '@uirouter/core': '@uirouter/core',
       '@uirouter/rx': '@uirouter/rx',
-      '@angular/core': 'ng.core',
-      '@angular/common': 'ng.common',
     },
     sourcemap: true,
     banner: banner,

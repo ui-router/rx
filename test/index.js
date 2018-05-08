@@ -39,7 +39,7 @@ describe('State Changes', () => {
     });
   });
 
-  fit('(successful) should emit transitions from router.globals.success$', async function(done) {
+  it('(successful) should emit transitions from router.globals.success$', async function(done) {
     await router.stateService.go('foo').then(tick, tick);
     expect(router.globals.current.name).toEqual('foo');
     expect(successes).toEqual(['foo']);
@@ -52,14 +52,19 @@ describe('State Changes', () => {
   });
 
   it('(unsuccessful) should not emit transitions from router.globals.success$', async function(done) {
-    router.stateRegistry.register({ name: 'fail', resolve: { failresolve: () => Promise.reject(null) } });
+    const failresolve = () => Promise.reject('the transition should fail');
+    router.stateRegistry.register({ name: 'fail', resolve: { failresolve } });
+    router.stateService.defaultErrorHandler(() => null);
 
     await router.stateService.go('foo').then(tick, tick);
     expect(successes).toEqual(['foo']);
 
     try {
-      await router.stateService.go('fail').then(tick, tick);
+      await router.stateService.go('fail');
     } catch (ignored) {}
+
+    await tick();
+
     expect(router.globals.current.name).toBe('foo');
     expect(successes).toEqual(['foo']);
 
