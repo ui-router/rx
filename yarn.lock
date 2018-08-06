@@ -3990,8 +3990,8 @@ rollup-plugin-uglify@^4.0.0:
     uglify-js "^3.3.25"
 
 rollup-plugin-visualizer@^0.8.0:
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-visualizer/-/rollup-plugin-visualizer-0.8.0.tgz#dd4df7c7d4dc49443ab6b62a729ff9977aea0697"
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-visualizer/-/rollup-plugin-visualizer-0.8.1.tgz#ebc14deef560f491c4be56f677db2529d7bba74b"
   dependencies:
     mkdirp "^0.5.1"
     source-map "^0.7.3"
