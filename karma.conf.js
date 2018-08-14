@@ -15,8 +15,7 @@ module.exports = function(karma) {
     colors: true,
     port: 8080,
     basePath: '.',
-    // browsers: ['ChromeHeadlessNoSandbox'],
-    browsers: ['Chrome'],
+    browsers: [process.env.TRAVIS ? 'ChromeHeadlessNoSandbox' : 'Chrome'],
     customLaunchers: {
       ChromeHeadlessNoSandbox: { base: 'ChromeHeadless', flags: ['--no-sandbox'] },
     },
