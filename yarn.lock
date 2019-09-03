@@ -1399,6 +1399,11 @@ es6-promisify@^5.0.0:
   dependencies:
     es6-promise "^4.0.3"
 
+escape-goat@^2.0.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/escape-goat/-/escape-goat-2.1.0.tgz#0f55d3fa1d41a4175fc7a26e25bdb5b2d1afbe31"
+  integrity sha512-7fMXQmS/6yjYQT/yydWKCAm5ucuU7QtqP6/CE7BIKk6z3xTP4MLqkdUBwaViQVuTAde8yZgZIjSnEAPRl6u53g==
+
 escape-html@~1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/escape-html/-/escape-html-1.0.3.tgz#0258eae4d3d0c0974de1c169188ef0051d1d1988"
@@ -2468,6 +2473,11 @@ is-windows@^1.0.2:
   resolved "https://registry.yarnpkg.com/is-windows/-/is-windows-1.0.2.tgz#d1850eb9791ecd18e6182ce12a30f396634bb19d"
   integrity sha512-eXK1UInq2bPmjyX6e3VHIzMLobc4J94i4AWn+Hpq3OU5KkrRC96OAcR3PRJ/pGu6m8TRnBHP9dkXQVsT/COVIA==
 
+is-wsl@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/is-wsl/-/is-wsl-1.1.0.tgz#1f16e4aa22b04d1336b66188a66af3c600c3a66d"
+  integrity sha1-HxbkqiKwTRM2tmGIpmrzxgDDpm0=
+
 isarray@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/isarray/-/isarray-0.0.1.tgz#8a18acfca9a8f4177e09abfc6038939b05d1eedf"
@@ -3374,6 +3384,13 @@ open@^0.0.5:
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/open/-/open-0.0.5.tgz#42c3e18ec95466b6bf0dc42f3a2945c3f0cad8fc"
 
+open@^6.3.0:
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/open/-/open-6.4.0.tgz#5c13e96d0dc894686164f18965ecfe889ecfc8a9"
+  integrity sha512-IFenVPgF70fSm1keSd2iDBIDIBZkroLeuffXq+wKTzTJlBpesFWojV9lb8mzOfaAzM1sr7HQHuO0vtV0zYekGg==
+  dependencies:
+    is-wsl "^1.1.0"
+
 optimist@^0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/optimist/-/optimist-0.6.1.tgz#da3ea74686fa21a19a111c326e90eb15a0196686"
@@ -3749,6 +3766,13 @@ punycode@^2.1.0:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
+
+pupa@^2.0.0:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/pupa/-/pupa-2.0.1.tgz#dbdc9ff48ffbea4a26a069b6f9f7abb051008726"
+  integrity sha512-hEJH0s8PXLY/cdXh66tNEQGndDrIKNqNC5xmrysZy3i5C3oEoLna7YAOad+7u125+zH1HNXUmGEkrhb3c2VriA==
+  dependencies:
+    escape-goat "^2.0.0"
 
 q@^1.4.1, q@^1.5.1:
   version "1.5.1"
@@ -4194,12 +4218,14 @@ rollup-plugin-uglify@^4.0.0:
     "@babel/code-frame" "^7.0.0-beta.47"
     uglify-js "^3.3.25"
 
-rollup-plugin-visualizer@^0.8.0:
-  version "0.8.1"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-visualizer/-/rollup-plugin-visualizer-0.8.1.tgz#ebc14deef560f491c4be56f677db2529d7bba74b"
-  integrity sha512-+yK/uGRcbt6Ssq+Mo4J4men5VCtwmB322eriW6jI4kYTv0roToAPFQ4DW4wqAB9OZHgIXPIlKMICshrzbQUzGw==
+rollup-plugin-visualizer@^2.5.4:
+  version "2.5.4"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-visualizer/-/rollup-plugin-visualizer-2.5.4.tgz#195945e1d5329067a18d2973066ef23b24a30acc"
+  integrity sha512-ehMX8Us4UmHmt9y6uvBdtW3ASAQDqCcmp07Qrm8dBqQMf1eAd89Rc/owGZr0cDp764dvLKQRA03W+nWlRajl4w==
   dependencies:
     mkdirp "^0.5.1"
+    open "^6.3.0"
+    pupa "^2.0.0"
     source-map "^0.7.3"
 
 rollup-pluginutils@^1.5.1:
