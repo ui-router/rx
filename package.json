@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/ui-router/rx#readme",
   "peerDependencies": {
-    "@uirouter/core": ">=5.0.0",
+    "@uirouter/core": ">=6.0.1",
     "rxjs": "^6.0.0"
   },
   "devDependencies": {
