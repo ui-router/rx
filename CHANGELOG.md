@@ -1,3 +1,26 @@
+# 0.6.0 (2019-10-01)
+[Compare `@uirouter/rx` versions 0.5.0 and 0.6.0](https://github.com/ui-router/rx/compare/0.5.0...0.6.0)
+
+### Bug Fixes
+
+* **travis:** use service: xvfb instead of launching it manually.  install libgconf debian package ([eace3a9](https://github.com/ui-router/rx/commit/eace3a9))
+
+
+### Features
+
+* add rxwait custom async policy ([dca4929](https://github.com/ui-router/rx/commit/dca4929))
+* add rxwait custom async policy ([ab1aaa4](https://github.com/ui-router/rx/commit/ab1aaa4))
+* **package:** require uirouter/core >=6.0.0 via peerDependency ([9bacfa4](https://github.com/ui-router/rx/commit/9bacfa4))
+
+
+### BREAKING CHANGES
+
+* **package:** this version of uirouter/rx depends on uirouter/core version 6 and greater
+Because this package now provides an async resolve policy for Observables, this package now has a peerDependency on uirouter/core version >=6.0.0
+
+
+
+
 # 0.5.0 (2018-05-08)
 [Compare `@uirouter/rx` versions 0.4.5 and 0.5.0](https://github.com/ui-router/rx/compare/0.4.5...0.5.0)
 
