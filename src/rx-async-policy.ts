@@ -1,4 +1,3 @@
-import { CustomAsyncPolicy } from '@uirouter/core';
 import { Observable, of } from 'rxjs';
 import { first, shareReplay } from 'rxjs/operators';
 
@@ -22,7 +21,7 @@ import { first, shareReplay } from 'rxjs/operators';
  * }
  * ```
  */
-export const RXWAIT: CustomAsyncPolicy = (resolveFnValue: Observable<any> | any): Promise<Observable<any>> => {
+export function RXWAIT(resolveFnValue: Observable<any> | any): Promise<Observable<any>> {
   if (!(resolveFnValue instanceof Observable)) {
     resolveFnValue = of(resolveFnValue);
   }
@@ -35,4 +34,4 @@ export const RXWAIT: CustomAsyncPolicy = (resolveFnValue: Observable<any> | any)
     .then(() => {
       return data$;
     });
-};
+}
