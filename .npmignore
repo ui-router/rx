@@ -1,0 +1,19 @@
+# Any hidden files
+**/.*
+.*
+
+src
+test
+scripts
+node_modules
+
+karma.**.js
+tslint.json
+tsconfig.json
+tsconfig.*.json
+yarn.lock
+stats.html
+
+*.iml
+*.ipr
+*.iws
