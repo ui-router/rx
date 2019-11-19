@@ -1,3 +1,13 @@
+## 0.6.4 (2019-11-19)
+[Compare `@uirouter/rx` versions 0.6.0 and 0.6.4](https://github.com/ui-router/rx/compare/0.6.0...0.6.4)
+
+### Bug Fixes
+
+* make RXWAIT custom async policy AOT compatible ([a091c48](https://github.com/ui-router/rx/commit/a091c48))
+
+
+
+
 # 0.6.0 (2019-10-01)
 [Compare `@uirouter/rx` versions 0.5.0 and 0.6.0](https://github.com/ui-router/rx/compare/0.5.0...0.6.0)
 
