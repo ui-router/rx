@@ -2400,6 +2400,11 @@ multimatch@^3.0.0:
     arrify "^1.0.1"
     minimatch "^3.0.4"
 
+nanoid@^2.1.6:
+  version "2.1.7"
+  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-2.1.7.tgz#d775e3e7c6470bbaaae3da9a647a80e228e0abf7"
+  integrity sha512-fmS3qwDldm4bE01HCIRqNk+f255CNjnAoeV3Zzzv0KemObHKqYgirVaZA9DtKcjogicWjYcHkJs4D5A8CjnuVQ==
+
 nanomatch@^1.2.9:
   version "1.2.13"
   resolved "https://registry.yarnpkg.com/nanomatch/-/nanomatch-1.2.13.tgz#b87a8aa4fc0de8fe6be88895b38983ff265bd119"
@@ -3157,15 +3162,17 @@ rollup-plugin-uglify@^6.0.3:
     serialize-javascript "^1.9.0"
     uglify-js "^3.4.9"
 
-rollup-plugin-visualizer@^2.5.4:
-  version "2.7.2"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-visualizer/-/rollup-plugin-visualizer-2.7.2.tgz#02e34e419d6ad9bcf6d334d4ff302e87a4d612a2"
-  integrity sha512-aJ9GA2mGblEttMmyA2bO8Ce40/VAH3tFYhiXaEJKuJTY6eaU5q744wgE6H8YzM2mc1uLQeejn6A00ldjUSLhyA==
+rollup-plugin-visualizer@^3.2.2:
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-visualizer/-/rollup-plugin-visualizer-3.2.2.tgz#a175ffae34226fda249e2bbc44acb812853d8709"
+  integrity sha512-PTXnuVh/WBGDOW7Mnk24q9VvclmbH0A6cbXynO1nPytru+RJ2IgTjKMhrpjuiQmevwi6JUcb9bEhhCauYQTmig==
   dependencies:
     mkdirp "^0.5.1"
+    nanoid "^2.1.6"
     open "^6.0.0"
     pupa "^2.0.0"
     source-map "^0.7.3"
+    yargs "^15.0.0"
 
 rollup-pluginutils@^1.5.1:
   version "1.5.2"
@@ -4080,7 +4087,7 @@ yargs@^14.2.0:
     y18n "^4.0.0"
     yargs-parser "^15.0.0"
 
-yargs@^15.0.2:
+yargs@^15.0.0, yargs@^15.0.2:
   version "15.0.2"
   resolved "https://registry.yarnpkg.com/yargs/-/yargs-15.0.2.tgz#4248bf218ef050385c4f7e14ebdf425653d13bd3"
   integrity sha512-GH/X/hYt+x5hOat4LMnCqMd8r5Cv78heOMIJn1hr7QPPBqfeC6p89Y78+WB9yGDvfpCvgasfmWLzNzEioOUD9Q==
