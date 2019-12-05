@@ -1,4 +1,4 @@
-# ui-router-rx
+# @uirouter/rx
 Reactive Extensions (RxJS) for UI-Router
 
 ### What
@@ -18,7 +18,7 @@ This plugin works with UI-Router Core 2.0 and above (angular-ui-router 1.0.0-rc.
 ### Getting
 
 ```
-npm install ui-router-rx
+npm install @uirouter/rx
 ```
 
 ### Enabling
@@ -27,7 +27,7 @@ This is a UI-Router Plugin.
 Add the `UIRouterRx` plugin to your app's `UIRouter` instance.
 
 ```js
-import { UIRouterRx } from "ui-router-rx";
+import { UIRouterRx } from "@uirouter/rx";
 
 // ... after UI-Router bootstrap, get a reference to the `UIRouter` instance
 // ... call `.plugin()` to register the ui-router-rx plugin
