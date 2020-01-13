@@ -1,3 +1,8 @@
+## 0.6.5 (2020-01-13)
+[Compare `@uirouter/rx` versions 0.6.4 and 0.6.5](https://github.com/ui-router/rx/compare/0.6.4...0.6.5)
+
+
+
 ## 0.6.4 (2019-11-19)
 [Compare `@uirouter/rx` versions 0.6.0 and 0.6.4](https://github.com/ui-router/rx/compare/0.6.0...0.6.4)
 
