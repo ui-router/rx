@@ -1,22 +1,13 @@
 /** @module rx */
 /** */
-import { Observable, ReplaySubject } from 'rxjs';
-import { map, mergeMap, filter } from 'rxjs/operators';
-import { Transition, UIRouter, StateDeclaration, UIRouterPlugin } from '@uirouter/core';
+import { StateDeclaration, Transition, UIRouter, UIRouterPlugin } from '@uirouter/core';
+import { ReplaySubject } from 'rxjs';
+import { filter, map, mergeMap } from 'rxjs/operators';
 
 export interface StatesChangedEvent {
   currentStates: StateDeclaration[];
   registered: StateDeclaration[];
   deregistered: StateDeclaration[];
-}
-
-declare module '@uirouter/core/lib/globals' {
-  interface UIRouterGlobals {
-    states$?: Observable<StatesChangedEvent>;
-    start$?: Observable<Transition>;
-    success$?: Observable<Transition>;
-    params$?: Observable<{ [paramName: string]: any }>;
-  }
 }
 
 /** Augments UIRouterGlobals with observables for transition starts, successful transitions, and state parameters */
