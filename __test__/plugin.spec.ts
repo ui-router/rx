@@ -1,5 +1,5 @@
 import { UIRouter, servicesPlugin, memoryLocationPlugin } from '@uirouter/core';
-import { UIRouterRxPlugin } from '../lib-esm';
+import { UIRouterRxPlugin } from '../src';
 
 describe('Globals Augmentation', () => {
   let router;

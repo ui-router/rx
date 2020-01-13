@@ -1,4 +1,4 @@
-import { RXWAIT } from '../lib-esm';
+import { RXWAIT } from '../src';
 import { Observable, of, Subject } from 'rxjs';
 
 describe('RXWAIT', () => {

@@ -7,7 +7,8 @@
     "compile": "npm run clean && tsc && tsc -outDir lib-esm -m es6",
     "bundle": "rollup -c && rollup -c --environment MINIFY",
     "build": "run-s compile bundle fixmaps:*",
-    "test": "npm run build && karma start",
+    "test": "jest",
+    "test:debug": "node --inspect ./node_modules/.bin/jest --runInBand --watch",
     "fixmaps:lib": "tweak_sourcemap_paths -a --include 'lib/**/*.js.map' 'lib-esm/**/*.js.map'",
     "fixmaps:bundle": "tweak_sourcemap_paths -p ../src --include '_bundles/**/*.js.map'",
     "release": "release",
@@ -37,16 +38,12 @@
     "rxjs": "^6.0.0"
   },
   "devDependencies": {
+    "@types/jest": "^24.0.25",
     "@uirouter/core": "^6.0.1",
     "@uirouter/publish-scripts": "2.3.42",
     "husky": "^3.0.5",
     "jasmine": "^3.1.0",
-    "karma": "^4.3.0",
-    "karma-chrome-launcher": "^3.1.0",
-    "karma-jasmine": "^2.0.1",
-    "karma-mocha-reporter": "^2.2.5",
-    "karma-rollup-preprocessor": "^7.0.2",
-    "karma-super-dots-reporter": "^0.2.0",
+    "jest": "^24.9.0",
     "prettier": "^1.13.7",
     "pretty-quick": "^1.6.0",
     "rollup": "^1.20.3",
@@ -59,6 +56,14 @@
     "rollup-plugin-uglify": "^6.0.3",
     "rollup-plugin-visualizer": "^2.5.4",
     "rxjs": "^6.2.2",
+    "ts-jest": "^24.3.0",
     "typescript": "^3.6.2"
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "ts-jest"
+    },
+    "preset": "ts-jest",
+    "restoreMocks": true
   }
 }
