@@ -1,3 +1,5 @@
+/** @packageDocumentation @publicapi @module rx */
+
 import { Observable, of } from 'rxjs';
 import { first, shareReplay } from 'rxjs/operators';
 

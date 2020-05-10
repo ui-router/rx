@@ -1,5 +1,5 @@
-/** @module rx */
-/** */
+/** @packageDocumentation @publicapi @module rx */
+
 import { StateDeclaration, Transition, UIRouter, UIRouterPlugin } from '@uirouter/core';
 import { ReplaySubject } from 'rxjs';
 import { filter, map, mergeMap } from 'rxjs/operators';
@@ -17,7 +17,15 @@ export class UIRouterRx implements UIRouterPlugin {
 
   constructor(router: UIRouter) {
     let start$ = new ReplaySubject<Transition>(1);
-    let success$ = start$.pipe(mergeMap(t => t.promise.then(() => t, () => null)), filter(t => !!t));
+    let success$ = start$.pipe(
+      mergeMap(t =>
+        t.promise.then(
+          () => t,
+          () => null
+        )
+      ),
+      filter(t => !!t)
+    );
     let params$ = success$.pipe(map((transition: Transition) => transition.params()));
 
     let states$ = new ReplaySubject<StatesChangedEvent>(1);
