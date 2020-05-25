@@ -1,9 +1,5 @@
-import nodeResolve from 'rollup-plugin-node-resolve';
-import { uglify } from 'rollup-plugin-uglify';
-import sourcemaps from 'rollup-plugin-sourcemaps';
-import commonjs from 'rollup-plugin-commonjs';
-
-let MINIFY = process.env.MINIFY;
+import nodeResolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
 
 let pkg = require('./package.json');
 let banner = `/**
@@ -13,15 +9,7 @@ let banner = `/**
  * @license MIT License, http://www.opensource.org/licenses/MIT
  */`;
 
-let uglifyOpts = { output: {} };
-// retain multiline comment with @license
-uglifyOpts.output.comments = (node, comment) => comment.type === 'comment2' && /@license/i.test(comment.value);
-
-let plugins = [nodeResolve({ jsnext: true }), sourcemaps(), commonjs()];
-
-if (MINIFY) plugins.push(uglify(uglifyOpts));
-
-let extension = MINIFY ? '.min.js' : '.js';
+let plugins = [nodeResolve(), commonjs()];
 
 // Suppress this error message... there are hundreds of them. Angular team says to ignore it.
 // https://github.com/rollup/rollup/wiki/Troubleshooting#this-is-undefined
@@ -41,7 +29,7 @@ function isExternal(id) {
 const CONFIG = {
   input: 'lib-esm/index.js',
   output: {
-    file: '_bundles/ui-router-rx' + extension,
+    file: '_bundles/ui-router-rx.js',
     name: '@uirouter/rx',
     globals: {
       '@uirouter/core': '@uirouter/core',
