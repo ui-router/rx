@@ -42,7 +42,7 @@
     "@rollup/plugin-node-resolve": "9.0.0",
     "@types/jest": "26.0.13",
     "@uirouter/core": "^6.0.1",
-    "@uirouter/publish-scripts": "2.5.4",
+    "@uirouter/publish-scripts": "2.5.5",
     "husky": "^4.2.5",
     "jasmine": "^3.1.0",
     "jest": "^26.0.1",
