@@ -64,7 +64,7 @@
     "restoreMocks": true
   },
   "dependencies": {
-    "bufferutil": "4.0.1",
+    "bufferutil": "4.0.3",
     "canvas": "2.6.1",
     "utf-8-validate": "5.0.2"
   }
