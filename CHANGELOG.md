@@ -1,3 +1,16 @@
+# 1.0.0 (2021-11-30)
+[Compare `@uirouter/rx` versions 0.6.5 and 1.0.0](https://github.com/ui-router/rx/compare/0.6.5...1.0.0)
+
+### Features
+
+* **rxjs:** Add support for RxJS 7 (in addition to 6)
+
+### BREAKING CHANGE
+
+- rxjs semver range changed to ^6.5.3 || ^7.4.0
+
+
+
 ## 0.6.5 (2020-01-13)
 [Compare `@uirouter/rx` versions 0.6.4 and 0.6.5](https://github.com/ui-router/rx/compare/0.6.4...0.6.5)
 
