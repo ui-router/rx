@@ -5,7 +5,7 @@
   "scripts": {
     "prepare": "husky",
     "clean": "shx rm -rf lib lib-esm _bundles yarn-error.log stats.html",
-    "compile": "npm run clean && tsc && tsc -outDir lib-esm -m es6",
+    "compile": "npm run clean && tsgo && tsgo --outDir lib-esm --module es6",
     "bundle": "rolldown -c rolldown.config.mjs",
     "build": "run-s compile bundle fixmaps:*",
     "test": "vitest run",
@@ -39,6 +39,7 @@
     "rxjs": "^6.5.3 || ^7.0.0"
   },
   "devDependencies": {
+    "@typescript/native-preview": "^7.0.0-dev.20260102.1",
     "@uirouter/core": "^6.1.2",
     "@uirouter/publish-scripts": "^2.7.0",
     "husky": "^9.1.7",
