@@ -7,8 +7,8 @@
     "compile": "npm run clean && tsc && tsc -outDir lib-esm -m es6",
     "bundle": "rollup -c",
     "build": "run-s compile bundle fixmaps:*",
-    "test": "jest",
-    "test:debug": "node --inspect ./node_modules/.bin/jest --runInBand --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "fixmaps:lib": "tweak_sourcemap_paths -a --include 'lib/**/*.js.map' 'lib-esm/**/*.js.map'",
     "fixmaps:bundle": "tweak_sourcemap_paths -p ../src --include '_bundles/**/*.js.map'",
     "release": "release",
@@ -40,12 +40,9 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "15.0.0",
     "@rollup/plugin-node-resolve": "9.0.0",
-    "@types/jest": "26.0.13",
     "@uirouter/core": "^6.0.1",
     "@uirouter/publish-scripts": "2.5.5",
     "husky": "^4.2.5",
-    "jasmine": "^3.1.0",
-    "jest": "^26.0.1",
     "prettier": "^2.0.5",
     "pretty-quick": "^3.0.2",
     "rollup": "^2.10.9",
@@ -53,14 +50,7 @@
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-visualizer": "^4.0.4",
     "rxjs": "^6.5.3 || ^7.4.0",
-    "ts-jest": "^26.3.0",
+    "vitest": "^3.0.0",
     "typescript": "^4.0.2"
-  },
-  "jest": {
-    "transform": {
-      ".(ts|tsx)": "ts-jest"
-    },
-    "preset": "ts-jest",
-    "restoreMocks": true
   }
 }

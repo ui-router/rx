@@ -1,11 +1,12 @@
 import { RXWAIT } from '../src';
 import { Observable, of, Subject } from 'rxjs';
+import { describe, it, beforeEach, expect, vi } from 'vitest';
 
 describe('RXWAIT', () => {
   let resolveSuccessSpy;
 
   beforeEach(() => {
-    resolveSuccessSpy = jasmine.createSpy('resolveSuccess');
+    resolveSuccessSpy = vi.fn();
   });
 
   describe('when provided with something other than an observable', () => {
@@ -48,7 +49,7 @@ describe('RXWAIT', () => {
     beforeEach(() => {
       resolveSubject = new Subject();
 
-      resolveRejectSpy = jasmine.createSpy('resolveReject');
+      resolveRejectSpy = vi.fn();
 
       resolve = RXWAIT(resolveSubject.asObservable());
 
@@ -67,7 +68,7 @@ describe('RXWAIT', () => {
       });
 
       it('should resolve the promise with an observable', () => {
-        expect(resolveSuccessSpy).toHaveBeenCalledWith(jasmine.any(Observable));
+        expect(resolveSuccessSpy).toHaveBeenCalledWith(expect.any(Observable));
       });
 
       describe('when the observable emits again', () => {
@@ -76,7 +77,7 @@ describe('RXWAIT', () => {
         beforeEach(() => {
           value = null;
 
-          resolveSuccessSpy.calls.mostRecent().args[0].subscribe(result => {
+          resolveSuccessSpy.mock.calls[resolveSuccessSpy.mock.calls.length - 1][0].subscribe(result => {
             value = result;
           });
 
