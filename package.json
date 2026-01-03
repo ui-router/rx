@@ -6,7 +6,7 @@
     "prepare": "husky",
     "clean": "shx rm -rf lib lib-esm _bundles yarn-error.log stats.html",
     "compile": "npm run clean && tsc && tsc -outDir lib-esm -m es6",
-    "bundle": "rollup -c",
+    "bundle": "rolldown -c rolldown.config.mjs",
     "build": "run-s compile bundle fixmaps:*",
     "test": "vitest run",
     "test:watch": "vitest",
@@ -36,20 +36,15 @@
   "homepage": "https://github.com/ui-router/rx#readme",
   "peerDependencies": {
     "@uirouter/core": ">=6.0.1",
-    "rxjs": "^7.0.0 || ^8.0.0"
+    "rxjs": "^6.5.3 || ^7.0.0"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "15.0.0",
-    "@rollup/plugin-node-resolve": "9.0.0",
     "@uirouter/core": "^6.1.2",
     "@uirouter/publish-scripts": "^2.7.0",
     "husky": "^9.1.7",
     "prettier": "^3.7.4",
     "pretty-quick": "^4.2.2",
-    "rollup": "^2.10.9",
-    "rollup-plugin-sourcemaps": "^0.6.2",
-    "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-visualizer": "^4.0.4",
+    "rolldown": "^1.0.0-beta.58",
     "rxjs": "^6.5.3 || ^7.4.0",
     "typescript": "^5.9.3",
     "vitest": "^4.0.16"
