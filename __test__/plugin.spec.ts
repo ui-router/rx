@@ -1,5 +1,6 @@
 import { UIRouter, servicesPlugin, memoryLocationPlugin } from '@uirouter/core';
 import { UIRouterRxPlugin } from '../src';
+import { describe, it, beforeEach, expect } from 'vitest';
 
 describe('Globals Augmentation', () => {
   let router;
@@ -39,7 +40,7 @@ describe('State Changes', () => {
     });
   });
 
-  it('(successful) should emit transitions from router.globals.success$', async function(done) {
+  it('(successful) should emit transitions from router.globals.success$', async () => {
     await router.stateService.go('foo').then(tick, tick);
     expect(router.globals.current.name).toEqual('foo');
     expect(successes).toEqual(['foo']);
@@ -47,11 +48,9 @@ describe('State Changes', () => {
     await router.stateService.go('bar').then(tick, tick);
     expect(router.globals.current.name).toEqual('bar');
     expect(successes).toEqual(['foo', 'bar']);
-
-    done();
   });
 
-  it('(unsuccessful) should not emit transitions from router.globals.success$', async function(done) {
+  it('(unsuccessful) should not emit transitions from router.globals.success$', async () => {
     const failresolve = () => Promise.reject('the transition should fail');
     router.stateRegistry.register({ name: 'fail', resolve: { failresolve } });
     router.stateService.defaultErrorHandler(() => null);
@@ -67,7 +66,5 @@ describe('State Changes', () => {
 
     expect(router.globals.current.name).toBe('foo');
     expect(successes).toEqual(['foo']);
-
-    done();
   });
 });
