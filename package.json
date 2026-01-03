@@ -38,6 +38,9 @@
     "@uirouter/core": ">=6.0.1",
     "rxjs": "^6.5.3 || ^7.0.0"
   },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.29.1"
+  },
   "devDependencies": {
     "@typescript/native-preview": "^7.0.0-dev.20260102.1",
     "@uirouter/core": "^6.1.2",
