@@ -19,8 +19,8 @@ describe('RXWAIT', () => {
     });
 
     it('should resolve with an observable', () => {
-      return resolve.then(observable => {
-        observable.subscribe(value => {
+      return resolve.then((observable) => {
+        observable.subscribe((value) => {
           expect(value).toBe('5');
         });
       });
@@ -35,8 +35,8 @@ describe('RXWAIT', () => {
     });
 
     it('should resolve straight away with an observable', () => {
-      return resolve.then(observable => {
-        observable.subscribe(value => {
+      return resolve.then((observable) => {
+        observable.subscribe((value) => {
           expect(value).toBe('5');
         });
       });
@@ -77,7 +77,7 @@ describe('RXWAIT', () => {
         beforeEach(() => {
           value = null;
 
-          resolveSuccessSpy.mock.calls[resolveSuccessSpy.mock.calls.length - 1][0].subscribe(result => {
+          resolveSuccessSpy.mock.calls[resolveSuccessSpy.mock.calls.length - 1][0].subscribe((result) => {
             value = result;
           });
 

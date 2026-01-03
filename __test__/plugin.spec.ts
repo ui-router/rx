@@ -20,7 +20,7 @@ describe('Globals Augmentation', () => {
   });
 });
 
-const tick = () => new Promise(resolve => setTimeout(resolve));
+const tick = () => new Promise((resolve) => setTimeout(resolve));
 
 describe('State Changes', () => {
   let router, successes;
@@ -35,7 +35,7 @@ describe('State Changes', () => {
     router.stateRegistry.register({ name: 'foo' });
     router.stateRegistry.register({ name: 'bar' });
 
-    router.globals.success$.subscribe(trans => {
+    router.globals.success$.subscribe((trans) => {
       successes.push(trans.to().name);
     });
   });

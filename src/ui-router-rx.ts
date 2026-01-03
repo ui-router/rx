@@ -18,13 +18,13 @@ export class UIRouterRx implements UIRouterPlugin {
   constructor(router: UIRouter) {
     let start$ = new ReplaySubject<Transition>(1);
     let success$ = start$.pipe(
-      mergeMap(t =>
+      mergeMap((t) =>
         t.promise.then(
           () => t,
           () => null
         )
       ),
-      filter(t => !!t)
+      filter((t) => !!t)
     );
     let params$ = success$.pipe(map((transition: Transition) => transition.params()));
 
@@ -41,14 +41,14 @@ export class UIRouterRx implements UIRouterPlugin {
       states$.next(changeEvent);
     }
 
-    this.deregisterFns.push(router.transitionService.onStart({}, transition => start$.next(transition)));
+    this.deregisterFns.push(router.transitionService.onStart({}, (transition) => start$.next(transition)));
     this.deregisterFns.push(router.stateRegistry.onStatesChanged(onStatesChangedEvent));
     onStatesChangedEvent(null, null);
     Object.assign(router.globals, { start$, success$, params$, states$ });
   }
 
   dispose() {
-    this.deregisterFns.forEach(deregisterFn => deregisterFn());
+    this.deregisterFns.forEach((deregisterFn) => deregisterFn());
     this.deregisterFns = [];
   }
 }

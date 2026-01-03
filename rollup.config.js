@@ -21,7 +21,7 @@ function onwarn(warning) {
 function isExternal(id) {
   // @uirouter/core and rxjs should be external
   let externals = [/^rxjs\/?/, /\/rxjs\//, /^@uirouter\/.*/];
-  let isExternal = externals.map(regex => regex.exec(id)).reduce((acc, val) => acc || !!val, false);
+  let isExternal = externals.map((regex) => regex.exec(id)).reduce((acc, val) => acc || !!val, false);
   // console.log(id, isExternal);
   return isExternal;
 }
